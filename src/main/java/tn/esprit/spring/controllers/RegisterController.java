@@ -28,7 +28,6 @@ public class RegisterController {
 	UserRepository userRepository;
 	@Autowired
 	RoleRepository roleRepository;
-
 	@Autowired
 	PasswordEncoder encoder;
 	@Autowired
@@ -63,6 +62,48 @@ public class RegisterController {
 					 encoder.encode(password));
 			Set<Role> roles = new HashSet<>();
 			Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+			roles.add(userRole);
+			user.setRoles(roles);
+			userRepository.save(user);
+			String appUrl = "";
+			User registered= user;
+			eventPublisher.publishEvent(new OnRegistrationCompleteEvent(appUrl, registered));
+			navigateTo="login.xhtml?faces-redirect=true";
+			FacesMessage facesMessage =
+
+					new FacesMessage("Registered successfully, please verify your account!");
+
+					FacesContext.getCurrentInstance().addMessage("form:btn",facesMessage);
+		}
+		return navigateTo;
+		
+	}
+	
+	public String doSignupmod() {
+		String navigateTo = "null";
+		if (userRepository.existsByUsername(username)) {
+			FacesMessage facesMessage =
+
+					new FacesMessage("Error: Username is already taken!");
+
+					FacesContext.getCurrentInstance().addMessage("form1:btn",facesMessage);
+		}
+
+		else if (userRepository.existsByEmail(email)) {
+			FacesMessage facesMessage =
+
+					new FacesMessage("Error: Email is already in use!");
+
+					FacesContext.getCurrentInstance().addMessage("form1:btn",facesMessage);
+		}
+		else
+		{
+			User user = new User(username, 
+					 email,
+					 encoder.encode(password));
+			Set<Role> roles = new HashSet<>();
+			Role userRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
 					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 			roles.add(userRole);
 			user.setRoles(roles);

@@ -19,8 +19,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import tn.esprit.spring.entity.ERole;
+import tn.esprit.spring.entity.Role;
 import tn.esprit.spring.entity.User;
 import tn.esprit.spring.payload.request.LoginRequest;
+import tn.esprit.spring.repository.RoleRepository;
 import tn.esprit.spring.repository.UserRepository;
 import tn.esprit.spring.security.jwt.JwtUtils;
 import tn.esprit.spring.services.UserDetailsImpl;
@@ -43,6 +46,7 @@ JwtUtils jwtUtils;
 
 @Autowired
 UserRepository userRepository;
+
 	
 	private String username;
 	private String password;
@@ -64,9 +68,11 @@ UserRepository userRepository;
 				.collect(Collectors.toList());
 		User user = userRepository.findByUsername(userDetails.getUsername())
 				.orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + userDetails.getUsername()));
+				
 		if (user != null) {
 		navigateTo = "/welcome.xhtml?faces-redirect=true";
 		loggedIn = true; }
+
 		else {
 		FacesMessage facesMessage =
 		new FacesMessage("Login Failed: please check your username/password and try again.");
