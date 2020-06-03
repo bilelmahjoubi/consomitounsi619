@@ -46,6 +46,8 @@ JwtUtils jwtUtils;
 
 @Autowired
 UserRepository userRepository;
+@Autowired
+RoleRepository roleRepository;
 
 	
 	private String username;
@@ -68,10 +70,17 @@ UserRepository userRepository;
 				.collect(Collectors.toList());
 		User user = userRepository.findByUsername(userDetails.getUsername())
 				.orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + userDetails.getUsername()));
-				
-		if (user != null) {
-		navigateTo = "/welcome.xhtml?faces-redirect=true";
+		
+		if (user != null && (+user.getRoles().stream().findFirst().get().getId()) ==1) {
+		navigateTo = "/home.xhtml?faces-redirect=true";
 		loggedIn = true; }
+		
+		else if (user != null && (+user.getRoles().stream().findFirst().get().getId()) ==2) {
+			navigateTo = "/home.xhtml?faces-redirect=true";
+			loggedIn = true; }
+		else if (user != null && (+user.getRoles().stream().findFirst().get().getId()) ==3) {
+			navigateTo = "/welcome.xhtml?faces-redirect=true";
+			loggedIn = true; }
 
 		else {
 		FacesMessage facesMessage =

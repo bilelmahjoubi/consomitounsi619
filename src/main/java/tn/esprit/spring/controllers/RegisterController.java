@@ -1,5 +1,6 @@
 package tn.esprit.spring.controllers;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -37,6 +38,9 @@ public class RegisterController {
 	private String username;
 	private String password;
 	private String email;
+	private Date dateNaissance;
+	private String Adresse;
+	private Long NumTel;
 	
 	public String doSignup() {
 		String navigateTo = "null";
@@ -59,7 +63,7 @@ public class RegisterController {
 		{
 			User user = new User(username, 
 					 email,
-					 encoder.encode(password));
+					 encoder.encode(password),dateNaissance,Adresse,NumTel);
 			Set<Role> roles = new HashSet<>();
 			Role userRole = roleRepository.findByName(ERole.ROLE_USER)
 					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
@@ -101,7 +105,7 @@ public class RegisterController {
 		{
 			User user = new User(username, 
 					 email,
-					 encoder.encode(password));
+					 encoder.encode(password),dateNaissance,Adresse,NumTel);
 			Set<Role> roles = new HashSet<>();
 			Role userRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
 					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
@@ -177,9 +181,29 @@ public class RegisterController {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 
+	public Date getDateNaissance() {
+		return dateNaissance;
+	}
 
+	public void setDateNaissance(Date dateNaissance) {
+		this.dateNaissance = dateNaissance;
+	}
 
+	public String getAdresse() {
+		return Adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		Adresse = adresse;
+	}
+
+	public Long getNumTel() {
+		return NumTel;
+	}
+
+	public void setNumTel(Long numTel) {
+		NumTel = numTel;
+	}
 
 }

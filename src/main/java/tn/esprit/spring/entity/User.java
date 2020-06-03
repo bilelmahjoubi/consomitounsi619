@@ -1,5 +1,6 @@
 package tn.esprit.spring.entity;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,6 +14,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -42,12 +45,23 @@ public class User {
 	@Size(max = 120)
 	private String password;
 	
+	@Temporal(TemporalType.DATE)
+    private Date dateNaissance;
+	
+	@NotBlank
+	@Size(max = 20)
+	private String Adresse;
+	
+	@NotBlank
+	@Size(max = 8)
+	private Long NumTel;
+	
 	private Boolean EtatAcc=true;
 	
 	@Column(name = "enabled")
     private boolean enabled=false;
 
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(	name = "user_roles",
 				joinColumns = @JoinColumn(name = "user_id"), 
 				inverseJoinColumns = @JoinColumn(name = "role_id")) 
@@ -105,6 +119,69 @@ public class User {
 		this.enabled = enabled;
 		this.roles = roles;
 	}
+	
+
+	public User(@NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email,
+			@NotBlank @Size(max = 120) String password, Date dateNaissance, @NotBlank @Size(max = 20) String adresse,
+			@NotBlank @Size(max = 8) Long numTel, Boolean etatAcc, boolean enabled, Set<Role> roles) {
+		super();
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.dateNaissance = dateNaissance;
+		Adresse = adresse;
+		NumTel = numTel;
+		EtatAcc = etatAcc;
+		this.enabled = enabled;
+		this.roles = roles;
+	}
+	
+	
+
+	public User(@NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email,
+			@NotBlank @Size(max = 120) String password, Date dateNaissance, @NotBlank @Size(max = 20) String adresse,
+			@NotBlank @Size(max = 8) Long numTel, Set<Role> roles) {
+		super();
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.dateNaissance = dateNaissance;
+		Adresse = adresse;
+		NumTel = numTel;
+		this.roles = roles;
+	}
+	
+	
+
+	public User(Long id, @NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email,
+			@NotBlank @Size(max = 120) String password, Date dateNaissance, @NotBlank @Size(max = 20) String adresse,
+			@NotBlank @Size(max = 8) Long numTel, Boolean etatAcc, boolean enabled, Set<Role> roles) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.dateNaissance = dateNaissance;
+		Adresse = adresse;
+		NumTel = numTel;
+		EtatAcc = etatAcc;
+		this.enabled = enabled;
+		this.roles = roles;
+	}
+	
+	
+
+	public User(@NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email,
+			@NotBlank @Size(max = 120) String password, Date dateNaissance, @NotBlank @Size(max = 20) String adresse,
+			@NotBlank @Size(max = 8) Long numTel) {
+		super();
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.dateNaissance = dateNaissance;
+		Adresse = adresse;
+		NumTel = numTel;
+	}
 
 	public Long getId() {
 		return id;
@@ -161,5 +238,31 @@ public class User {
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
+
+	public Date getDateNaissance() {
+		return dateNaissance;
+	}
+
+	public void setDateNaissance(Date dateNaissance) {
+		this.dateNaissance = dateNaissance;
+	}
+
+	public String getAdresse() {
+		return Adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		Adresse = adresse;
+	}
+
+	public Long getNumTel() {
+		return NumTel;
+	}
+
+	public void setNumTel(Long numTel) {
+		NumTel = numTel;
+	}
+	
+	
 
 }
