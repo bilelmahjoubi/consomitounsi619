@@ -1,0 +1,199 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templateclient.xhtml">
+<ui:param name="profile" value="Accueil" />
+<ui:define name="profile">
+
+<h:head>
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Profile</title>
+		<meta name="description" content="Matresume is a material CV / Resume / Vcard / Portfolio HTML5 template by hencework." />
+		<meta name="keywords" content="material design, resume, responsive template, cv, multipurpose, portfolio, html5 template, themeforest.net, bootstrap, html5, creative, landing page, sass, clean, design, modern, angular js," />
+		<meta name="author" content="hencework"/>
+		
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<h:outputStylesheet library="login" name="profile/css/style.css" />
+		</h:head>
+		<h:body class="about-sec mt-sm-120 mb-30">
+
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="mdl-card mdl-shadow--2dp">
+										<div class="row">
+											<div class="col-md-5 col-xs-12 mb-30">
+												<div class="candidate-img mb-35"></div>
+												<ul class="social-icons">
+													<li>
+														<a class="facebook-link" href="#">
+															<i id="tt1" class="zmdi zmdi-facebook" tabindex="0"></i>
+															<div class="mdl-tooltip" data-mdl-for="tt1" data-upgraded=",MaterialTooltip">
+																facebook
+															</div>
+														</a>
+													</li>
+													<li>
+														<a class="twitter-link" href="#">
+															<i id="tt2" class="zmdi zmdi-twitter" tabindex="0"></i>
+															<div class="mdl-tooltip" data-mdl-for="tt2" data-upgraded=",MaterialTooltip">
+																twitter
+															</div>
+														</a>
+													</li>
+													<li>
+														<a class="linkedin-link" href="#">
+															<i id="tt3" class="zmdi zmdi-linkedin" tabindex="0"></i>
+															<div class="mdl-tooltip" data-mdl-for="tt3" data-upgraded=",MaterialTooltip">
+																linkedin
+															</div>
+														</a>
+													</li>
+													<li>
+														<a class="dribbble-link" href="#">
+															<i id="tt4" class="zmdi zmdi-dribbble" tabindex="0"></i>
+															<div class="mdl-tooltip" data-mdl-for="tt4" data-upgraded=",MaterialTooltip">
+																dribbble
+															</div>
+														</a>
+													</li>
+													<li>
+														<a class="instagram-link" href="#">
+															<i id="tt5" class="zmdi zmdi-instagram" tabindex="0"></i>
+															<div class="mdl-tooltip" data-mdl-for="tt5" data-upgraded=",MaterialTooltip">
+																instagram
+															</div>
+														</a>
+													</li>
+												</ul>
+											</div>
+											<div class="col-md-7 col-xs-12">
+												<div class="info-wrap">
+													<h1>benjamin sirge</h1>
+													<h5 class="mt-20 font-grey">UI/UX Designer &amp; Front End Developer</h5>
+													<div class="mt-30">
+														<a id="download_cv" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  bg-green font-white mr-10" href="#" data-upgraded=",MaterialButton,MaterialRipple">download cv<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+														<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect bg-blue font-white" href="#contact_sec" data-scroll="" data-upgraded=",MaterialButton,MaterialRipple">contact<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+													</div>
+												</div>
+												<ul class="profile-wrap mt-50">
+													<li>
+														<div class="profile-title">age</div>
+														<div class="profile-desc">24</div>
+													</li>
+													<li>
+														<div class="profile-title">address</div>
+														<div class="profile-desc">
+															Glenlake St. Mays Landing, NJ 08330
+														</div>
+													</li>
+													<li>
+														<div class="profile-title">email</div>
+														<div class="profile-desc">
+															benjaminsirje49@matresume.com
+														</div>
+													</li>
+													<li>
+														<div class="profile-title">phone</div>
+														<div class="profile-desc">
+															+1 234 56 78 90
+														</div>
+													</li>
+													<li>
+														<div class="profile-title">freelance</div>
+														<div class="profile-desc relative">Available
+															<i id="datepickopn" class="zmdi zmdi-calendar-check font-green pl-5"></i>
+															<div id="datepicker1" class="datepicker hasDatepicker">
+															<div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="display: block;">
+															<div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+															<a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="Prev">
+															<span class="ui-icon ui-icon-circle-triangle-w">Prev</span>
+															</a>
+															<a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next">
+															<span class="ui-icon ui-icon-circle-triangle-e">Next</span>
+															</a>
+															<div class="ui-datepicker-title">
+															<span class="ui-datepicker-month">June</span>
+															<span class="ui-datepicker-year">2020</span></div></div>
+															<table class="ui-datepicker-calendar">
+															<thead>
+															<tr><th scope="col" class="ui-datepicker-week-end">
+															<span title="Sunday">S</span></th>
+															<th scope="col">
+															<span title="Monday">M</span></th>
+															<th scope="col">
+															<span title="Tuesday">T</span></th>
+															<th scope="col"><span title="Wednesday">W</span></th>
+															<th scope="col"><span title="Thursday">T</span></th>
+															<th scope="col"><span title="Friday">F</span></th>
+															<th scope="col" class="ui-datepicker-week-end">
+															<span title="Saturday">S</span></th>
+															</tr>
+															</thead><tbody><tr>
+															<td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+															</td>
+															<td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020">
+															<a class="ui-state-default" href="#">1</a></td>
+															<td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020">
+															<a class="ui-state-default" href="#">2</a></td>
+															<td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020">
+															<a class="ui-state-default" href="#">3</a></td>
+															<td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020">
+															<a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">4</a></td>
+															<td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020">
+															<a class="ui-state-default" href="#">5</a></td>
+															<td class=" ui-datepicker-week-end " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020">
+															<a class="ui-state-default" href="#">6</a></td>
+															</tr>
+															<tr><td class=" ui-datepicker-week-end " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020">
+															<a class="ui-state-default" href="#">7</a></td><td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020">
+															<a class="ui-state-default" href="#">8</a></td>
+															<td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020">
+															<a class="ui-state-default" href="#">9</a></td>
+															<td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">10</a></td>
+															<td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">11</a></td>
+															<td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">12</a></td>
+															<td class=" ui-datepicker-week-end " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">13</a></td></tr><tr><td class=" ui-datepicker-week-end " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">14</a></td><td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">15</a></td><td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">16</a></td><td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">17</a></td><td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">18</a></td><td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">19</a></td><td class=" ui-datepicker-week-end " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">20</a></td></tr><tr><td class=" ui-datepicker-week-end " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">21</a></td><td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">22</a></td><td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">23</a></td><td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">24</a></td><td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">25</a></td><td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">26</a></td><td class=" ui-datepicker-week-end " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">27</a></td></tr><tr><td class=" ui-datepicker-week-end " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">28</a></td><td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020"><a class="ui-state-default" href="#">29</a></td><td class=" " title="Available" data-handler="selectDay" data-event="click" data-month="5" data-year="2020">
+															<a class="ui-state-default" href="#">30</a></td>
+															<td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"></td>
+															<td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+															</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"></td>
+															<td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+															</td></tr></tbody></table></div></div>
+														</div>
+														
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>	
+							</div>
+
+						
+						
+						
+		<script src="login/profile/js/jquery-1.12.4.min.js"></script>
+		<script src="login/profile/js/angular.min.js"></script>
+		<script src="login/profile/js/bootstrap.min.js"></script>
+		<script src="login/profile/js/jquery-ui.min.js"></script>
+		<script src="login/profile/js/material.min.js"></script>
+		<script src="login/profile/js/jQuery.appear.js"></script>
+		<script src="login/profile/js/app.js"></script>
+		<script src="login/profile/js/controllers.js"></script>
+		<script src="login/profile/js/smooth-scroll.js"></script>
+		<script src="login/profile/js/isotope.js"></script>
+		<script src="login/profile/js/lightgallery-all.js"></script>
+		<script src="login/profile/js/owl.carousel.min.js"></script>
+		<script src="login/profile/js/froogaloop2.min.js"></script>
+		<script src="login/profile/js/jquery.slimscroll.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxXt2P7-U38bK0xEFIT-ebZJ1ngK8wjww"></script>
+		<script src="login/profile/js/init.js"></script>
+		</h:body>
+		</ui:define>
+		</ui:composition>
+		
+		

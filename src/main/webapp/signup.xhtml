@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
@@ -66,7 +67,9 @@
 					
 					<div class="wrap-input100 validate-input" data-validate = "Date is required">
 						<span class="label-input100">dateNaissance</span>
-						<h:inputText class="input100" type="text" name="date" value="#{registerController.dateNaissance}" />
+						<h:inputText value="#{registerController.dateNaissance}" p:placeholder="dd-mm-yyyy" styleClass="form-input">
+    					<f:convertDateTime pattern="dd-mm-yyyy" />
+						</h:inputText>
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -81,7 +84,6 @@
 						<h:inputText class="input100" type="text" name="NumTel" value="#{registerController.numTel}" />
 						<span class="focus-input100"></span>
 					</div>
-
 
 					<div class="flex-m w-full p-b-33">
 						<div class="contact100-form-checkbox">
