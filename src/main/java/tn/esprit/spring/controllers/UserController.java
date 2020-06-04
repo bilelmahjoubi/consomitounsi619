@@ -73,13 +73,16 @@ RoleRepository roleRepository;
 		
 		if (user != null && (+user.getRoles().stream().findFirst().get().getId()) ==1) {
 		navigateTo = "/home.xhtml?faces-redirect=true";
-		loggedIn = true; }
+		user = userRepository.findByUsername(getUsername()).get();		
+				loggedIn = true; }
 		
 		else if (user != null && (+user.getRoles().stream().findFirst().get().getId()) ==2) {
 			navigateTo = "/home.xhtml?faces-redirect=true";
+			user.getUsername();
 			loggedIn = true; }
 		else if (user != null && (+user.getRoles().stream().findFirst().get().getId()) ==3) {
 			navigateTo = "/welcome.xhtml?faces-redirect=true";
+			user.getUsername();
 			loggedIn = true; }
 
 		else {
@@ -89,16 +92,8 @@ RoleRepository roleRepository;
 		}
 		return navigateTo;
 		}
-	
-	
-		public String doLogout() {
-		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-		return "/login1.xhtml?faces-redirect=true";
-		}
+			
 		
-		
-		
-	
 	public UserDetailsServiceImpl getUserDetails() {
 		return userDetails;
 	}

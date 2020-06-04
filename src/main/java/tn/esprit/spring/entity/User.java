@@ -52,9 +52,8 @@ public class User {
 	@Size(max = 20)
 	private String Adresse;
 	
-	@NotBlank
-	@Size(max = 8)
-	private Long NumTel;
+	
+	private int NumTel;
 	
 	private Boolean EtatAcc=true;
 	
@@ -123,7 +122,7 @@ public class User {
 
 	public User(@NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email,
 			@NotBlank @Size(max = 120) String password, Date dateNaissance, @NotBlank @Size(max = 20) String adresse,
-			@NotBlank @Size(max = 8) Long numTel, Boolean etatAcc, boolean enabled, Set<Role> roles) {
+			int numTel, Boolean etatAcc, boolean enabled, Set<Role> roles) {
 		super();
 		this.username = username;
 		this.email = email;
@@ -140,7 +139,7 @@ public class User {
 
 	public User(@NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email,
 			@NotBlank @Size(max = 120) String password, Date dateNaissance, @NotBlank @Size(max = 20) String adresse,
-			@NotBlank @Size(max = 8) Long numTel, Set<Role> roles) {
+			int numTel, Set<Role> roles) {
 		super();
 		this.username = username;
 		this.email = email;
@@ -155,7 +154,7 @@ public class User {
 
 	public User(Long id, @NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email,
 			@NotBlank @Size(max = 120) String password, Date dateNaissance, @NotBlank @Size(max = 20) String adresse,
-			@NotBlank @Size(max = 8) Long numTel, Boolean etatAcc, boolean enabled, Set<Role> roles) {
+			int numTel, Boolean etatAcc, boolean enabled, Set<Role> roles) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -173,7 +172,7 @@ public class User {
 
 	public User(@NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email,
 			@NotBlank @Size(max = 120) String password, Date dateNaissance, @NotBlank @Size(max = 20) String adresse,
-			@NotBlank @Size(max = 8) Long numTel) {
+			int numTel) {
 		super();
 		this.username = username;
 		this.email = email;
@@ -255,11 +254,11 @@ public class User {
 		Adresse = adresse;
 	}
 
-	public Long getNumTel() {
+	public int getNumTel() {
 		return NumTel;
 	}
 
-	public void setNumTel(Long numTel) {
+	public void setNumTel(int numTel) {
 		NumTel = numTel;
 	}
 	

@@ -56,6 +56,7 @@ public Collection<? extends GrantedAuthority> getAuthorities() {
 return authorities;
 }
 
+
 public Long getId() {
 return id;
 }

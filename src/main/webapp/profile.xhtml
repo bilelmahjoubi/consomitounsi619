@@ -71,8 +71,9 @@
 												</ul>
 											</div>
 											<div class="col-md-7 col-xs-12">
+											<h:form class="user">
 												<div class="info-wrap">
-													<h1>benjamin sirge</h1>
+													<h:outputText value="#{userController.username}" ></h:outputText>
 													<h5 class="mt-20 font-grey">UI/UX Designer &amp; Front End Developer</h5>
 													<div class="mt-30">
 														<a id="download_cv" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  bg-green font-white mr-10" href="#" data-upgraded=",MaterialButton,MaterialRipple">download cv<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
@@ -81,25 +82,25 @@
 												</div>
 												<ul class="profile-wrap mt-50">
 													<li>
-														<div class="profile-title">age</div>
-														<div class="profile-desc">24</div>
+														<div class="profile-title">email</div>
+														<div class="profile-desc"><h:outputText value="#{user.email}" ></h:outputText></div>
 													</li>
 													<li>
 														<div class="profile-title">address</div>
 														<div class="profile-desc">
-															Glenlake St. Mays Landing, NJ 08330
+															<h:outputText value="#{user.adresse}" ></h:outputText>
 														</div>
 													</li>
 													<li>
-														<div class="profile-title">email</div>
+														<div class="profile-title">Date Of Birth</div>
 														<div class="profile-desc">
-															benjaminsirje49@matresume.com
+															<h:outputText value="#{user.date_naissance}" ></h:outputText>
 														</div>
 													</li>
 													<li>
 														<div class="profile-title">phone</div>
 														<div class="profile-desc">
-															+1 234 56 78 90
+															<h:outputText value="#{user.num_tel}" ></h:outputText>
 														</div>
 													</li>
 													<li>
@@ -167,6 +168,7 @@
 														
 													</li>
 												</ul>
+												</h:form>
 											</div>
 										</div>
 									</div>

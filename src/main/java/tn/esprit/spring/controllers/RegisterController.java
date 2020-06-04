@@ -40,7 +40,7 @@ public class RegisterController {
 	private String email;
 	private Date dateNaissance;
 	private String Adresse;
-	private Long NumTel;
+	private int NumTel;
 	
 	public String doSignup() {
 		String navigateTo = "null";
@@ -198,11 +198,11 @@ public class RegisterController {
 		Adresse = adresse;
 	}
 
-	public Long getNumTel() {
+	public int getNumTel() {
 		return NumTel;
 	}
 
-	public void setNumTel(Long numTel) {
+	public void setNumTel(int numTel) {
 		NumTel = numTel;
 	}
 
