@@ -76,31 +76,35 @@
 													<h:outputText value="#{userController.username}" ></h:outputText>
 													<h5 class="mt-20 font-grey">UI/UX Designer &amp; Front End Developer</h5>
 													<div class="mt-30">
-														<a id="download_cv" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  bg-green font-white mr-10" href="#" data-upgraded=",MaterialButton,MaterialRipple">download cv<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+														<a id="update_profile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  bg-green font-white mr-10" href="#" data-upgraded=",MaterialButton,MaterialRipple">update profile<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
 														<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect bg-blue font-white" href="#contact_sec" data-scroll="" data-upgraded=",MaterialButton,MaterialRipple">contact<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
 													</div>
 												</div>
 												<ul class="profile-wrap mt-50">
 													<li>
 														<div class="profile-title">email</div>
-														<div class="profile-desc"><h:outputText value="#{user.email}" ></h:outputText></div>
+														<div class="profile-desc">
+														<h:outputText value="#{userController.user.email}"></h:outputText></div>
 													</li>
 													<li>
 														<div class="profile-title">address</div>
-														<div class="profile-desc">
-															<h:outputText value="#{user.adresse}" ></h:outputText>
+														<div class="profile-desc">												
+															<h:outputText value="#{userController.user.adresse}" ></h:outputText>
 														</div>
 													</li>
 													<li>
 														<div class="profile-title">Date Of Birth</div>
 														<div class="profile-desc">
-															<h:outputText value="#{user.date_naissance}" ></h:outputText>
+															<h:outputText value="#{userController.user.dateNaissance}" ></h:outputText>
+															
 														</div>
 													</li>
 													<li>
 														<div class="profile-title">phone</div>
 														<div class="profile-desc">
-															<h:outputText value="#{user.num_tel}" ></h:outputText>
+															
+															<h:outputText value="#{userController.user.numTel}" ></h:outputText>
+															
 														</div>
 													</li>
 													<li>

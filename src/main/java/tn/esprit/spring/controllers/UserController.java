@@ -1,5 +1,6 @@
 package tn.esprit.spring.controllers;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,8 +36,7 @@ import tn.esprit.spring.services.UserDetailsServiceImpl;
 @Join(path = "/", to = "/login1.jsf")
 public class UserController {
 	
-@Autowired
-UserDetailsServiceImpl userDetails;
+private UserDetailsImpl userDetails;
 
 @Autowired
 AuthenticationManager authenticationManager;
@@ -64,25 +64,22 @@ RoleRepository roleRepository;
 
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		String jwt = jwtUtils.generateJwtToken(authentication);
-		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();		
+		userDetails = (UserDetailsImpl) authentication.getPrincipal();		
 		List<String> roles = userDetails.getAuthorities().stream()
 				.map(item -> item.getAuthority())
 				.collect(Collectors.toList());
-		User user = userRepository.findByUsername(userDetails.getUsername())
+		user = userRepository.findByUsername(userDetails.getUsername())
 				.orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + userDetails.getUsername()));
 		
 		if (user != null && (+user.getRoles().stream().findFirst().get().getId()) ==1) {
 		navigateTo = "/home.xhtml?faces-redirect=true";
-		user = userRepository.findByUsername(getUsername()).get();		
 				loggedIn = true; }
 		
 		else if (user != null && (+user.getRoles().stream().findFirst().get().getId()) ==2) {
 			navigateTo = "/home.xhtml?faces-redirect=true";
-			user.getUsername();
 			loggedIn = true; }
 		else if (user != null && (+user.getRoles().stream().findFirst().get().getId()) ==3) {
 			navigateTo = "/welcome.xhtml?faces-redirect=true";
-			user.getUsername();
 			loggedIn = true; }
 
 		else {
@@ -94,12 +91,21 @@ RoleRepository roleRepository;
 		}
 			
 		
-	public UserDetailsServiceImpl getUserDetails() {
+
+
+	public UserDetailsImpl getUserDetails() {
 		return userDetails;
 	}
-	public void setUserDetails(UserDetailsServiceImpl userDetails) {
+
+
+
+
+	public void setUserDetails(UserDetailsImpl userDetails) {
 		this.userDetails = userDetails;
 	}
+
+
+
 
 	public String getUsername() {
 		return username;
