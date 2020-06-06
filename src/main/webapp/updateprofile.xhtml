@@ -73,44 +73,46 @@
 											<div class="col-md-7 col-xs-12">
 											<h:form class="user">
 												<div class="info-wrap">
-													<h:outputText value="#{userController.username}" ></h:outputText>
-													<h5 class="mt-20 font-grey">UI/UX Designer &amp; Front End Developer</h5>
-													<div class="mt-30">
-														<a id="update_profile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  bg-green font-white mr-10" href="updateprofile.jsf" data-upgraded=",MaterialButton,MaterialRipple">update profile<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
-														<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect bg-blue font-white" href="#contact_sec" data-scroll="" data-upgraded=",MaterialButton,MaterialRipple">contact<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
-													</div>
+													<h5><h:outputText value="#{userController.username}" ></h:outputText></h5>
+													
+													
 												</div>
 												<ul class="profile-wrap mt-50">
+												
 													<li>
 														<div class="profile-title">email</div>
 														<div class="profile-desc">
-														<h:outputText value="#{userController.user.email}"></h:outputText>
 														
+														<h:inputText class="profile-wrap mt-50" type="text" name="email"   value="#{userController.user.email}" ></h:inputText>
 														</div>
 													</li>
 													<li>
 														<div class="profile-title">address</div>
 														<div class="profile-desc">												
-															<h:outputText value="#{userController.user.adresse}" ></h:outputText> 
-															
+															<!-- <h:outputText value="#{userController.user.adresse}" ></h:outputText> -->
+															<h:inputText class="profile-wrap mt-50" type="text" name="adresse"   value="#{userController.user.adresse}" ></h:inputText>
 														</div>
 													</li>
 													<li>
 														<div class="profile-title">Date Of Birth</div>
 														<div class="profile-desc">
-														<h:outputText value="#{userController.user.dateNaissance}" >
-														<f:convertDateTime pattern="yyyy-mm-dd" /></h:outputText>
-															
+														<!-- <h:outputText value="#{userController.user.dateNaissance}" ></h:outputText>-->
+															<h:inputText class="profile-wrap mt-50" type="text" name="dateNaissance"   value="#{userController.user.dateNaissance}" >
+															<f:convertDateTime pattern="yyyy-mm-dd" /></h:inputText>
 																		
 														</div>
 													</li>
 													<li>
 														<div class="profile-title">phone</div>
 														<div class="profile-desc">
-															<h:outputText value="#{userController.user.numTel}" ></h:outputText>
-															</div>
+															
+															<h:inputText class="profile-wrap mt-50" type="text" name="dateNaissance"   value="#{userController.user.numTel}" ></h:inputText></div>
 													</li>
-													
+													<li>
+													<div class="mt-30">
+														<a id="update_profile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  bg-green font-white mr-10" href="profile.jsf" data-upgraded=",MaterialButton,MaterialRipple">
+													<h:commandButton class="login100-form-btn" value="save changes" action="#{updateController.updateUser(userController.user.id)}" /></a> </div>
+													</li>
 												</ul>
 												</h:form>
 											</div>

@@ -29,10 +29,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		
 	}
 	
-	public User findOne(long id){
-		return userRepository.getOne(id);
-	}
-	
-	
-
+		public User findOne(long id){
+		return userRepository.findById(id).get();
+		}
 }

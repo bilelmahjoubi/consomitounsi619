@@ -52,7 +52,7 @@ RoleRepository roleRepository;
 	
 	private String username;
 	private String password;
-	private User user;
+	public static User user;
 	private Boolean loggedIn;
 	
 	
