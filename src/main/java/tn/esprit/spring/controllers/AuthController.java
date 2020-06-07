@@ -1,5 +1,6 @@
 package tn.esprit.spring.controllers;
 
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
@@ -12,6 +13,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -27,8 +29,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 
@@ -48,6 +48,7 @@ import tn.esprit.spring.services.IUserService;
 import tn.esprit.spring.services.UserDetailsImpl;
 import tn.esprit.spring.services.UserDetailsServiceImpl;
 import tn.esprit.spring.services.UserService;
+
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -80,6 +81,7 @@ public class AuthController {
 	@Autowired
 	ApplicationEventPublisher eventPublisher;
 	
+
 	
 	
 	
@@ -237,4 +239,7 @@ public ResponseEntity<?> DisableUser(@PathVariable(value = "username") String us
 		return ResponseEntity.ok(new MessageResponse("Account Confirmed with succes"));
 	}
 		
+	
+	
 }
+

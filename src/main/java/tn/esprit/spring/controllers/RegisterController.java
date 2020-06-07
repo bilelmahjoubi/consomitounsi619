@@ -8,6 +8,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
 import org.ocpsoft.rewrite.annotation.Join;
+import org.primefaces.model.file.UploadedFiles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -20,6 +21,7 @@ import tn.esprit.spring.entity.Role;
 import tn.esprit.spring.entity.User;
 import tn.esprit.spring.repository.RoleRepository;
 import tn.esprit.spring.repository.UserRepository;
+import tn.esprit.spring.services.IUserService;
 
 @Controller(value = "registerController")
 @Join(path = "/signup", to = "/signup.jsf")
@@ -33,6 +35,8 @@ public class RegisterController {
 	PasswordEncoder encoder;
 	@Autowired
 	ApplicationEventPublisher eventPublisher;
+	@Autowired
+	IUserService userService;
 	
 	
 	private String username;
@@ -41,6 +45,7 @@ public class RegisterController {
 	private Date dateNaissance;
 	private String Adresse;
 	private int NumTel;
+	private UploadedFiles files;
 	
 	public String doSignup() {
 		String navigateTo = "null";
@@ -69,7 +74,7 @@ public class RegisterController {
 					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 			roles.add(userRole);
 			user.setRoles(roles);
-			userRepository.save(user);
+			userService.addUserImage(user, files);
 			String appUrl = "";
 			User registered= user;
 			eventPublisher.publishEvent(new OnRegistrationCompleteEvent(appUrl, registered));
@@ -112,6 +117,7 @@ public class RegisterController {
 			roles.add(userRole);
 			user.setRoles(roles);
 			userRepository.save(user);
+			
 			String appUrl = "";
 			User registered= user;
 			eventPublisher.publishEvent(new OnRegistrationCompleteEvent(appUrl, registered));
@@ -144,6 +150,15 @@ public class RegisterController {
 
 	public PasswordEncoder getEncoder() {
 		return encoder;
+	}
+	
+
+	public UploadedFiles getFiles() {
+		return files;
+	}
+
+	public void setFiles(UploadedFiles files) {
+		this.files = files;
 	}
 
 	public void setEncoder(PasswordEncoder encoder) {

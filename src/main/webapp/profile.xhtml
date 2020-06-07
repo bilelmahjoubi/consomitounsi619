@@ -26,7 +26,12 @@
 									<div class="mdl-card mdl-shadow--2dp">
 										<div class="row">
 											<div class="col-md-5 col-xs-12 mb-30">
-												<div class="candidate-img mb-35"></div>
+												<div class="candidate-img mb-35">
+												<ui:repeat var="ImagesUser" value="#{ImageUserController.getImageUser(userController.user.id)}" varStatus="status">
+												<li data-image="#{ImagesUser.image}">
+												<img src="#{ImagesUser.image}" alt="" style="width:16px; height:10px;"/></li>
+												</ui:repeat>
+												</div>
 												<ul class="social-icons">
 													<li>
 														<a class="facebook-link" href="#">

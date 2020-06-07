@@ -4,6 +4,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:b="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
@@ -43,7 +44,8 @@
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
 				<div class="login100-form validate-form">
-				<h:form class="register">
+				
+				<h:form class="register" enctype="multipart/form-data">
 					<span class="login100-form-title p-b-59">
 						Sign Up
 					</span>
@@ -84,6 +86,10 @@
 						<h:inputText class="input100" type="text" name="NumTel" value="#{registerController.numTel}" />
 						<span class="focus-input100"></span>
 					</div>
+					
+					
+						
+						<b:fileUpload value="#{registerController.files}" mode="simple" skinSimple="true" multiple="true" />
 
 					<div class="flex-m w-full p-b-33">
 						<div class="contact100-form-checkbox">

@@ -27,6 +27,7 @@ import tn.esprit.spring.payload.request.LoginRequest;
 import tn.esprit.spring.repository.RoleRepository;
 import tn.esprit.spring.repository.UserRepository;
 import tn.esprit.spring.security.jwt.JwtUtils;
+import tn.esprit.spring.services.IUserService;
 import tn.esprit.spring.services.UserDetailsImpl;
 import tn.esprit.spring.services.UserDetailsServiceImpl;
 
@@ -49,6 +50,7 @@ UserRepository userRepository;
 @Autowired
 RoleRepository roleRepository;
 
+
 	
 	private String username;
 	private String password;
@@ -70,8 +72,13 @@ RoleRepository roleRepository;
 				.collect(Collectors.toList());
 		user = userRepository.findByUsername(userDetails.getUsername())
 				.orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + userDetails.getUsername()));
-		
-		if (user != null && (+user.getRoles().stream().findFirst().get().getId()) ==1) {
+		if(user != null && !user.isEnabled()){
+			
+			FacesMessage facesMessage =
+					new FacesMessage("please verify you email .");
+					FacesContext.getCurrentInstance().addMessage("form:btn",facesMessage);			
+		}
+		else if (user != null && (+user.getRoles().stream().findFirst().get().getId()) ==1) {
 		navigateTo = "/home.xhtml?faces-redirect=true";
 				loggedIn = true; }
 		

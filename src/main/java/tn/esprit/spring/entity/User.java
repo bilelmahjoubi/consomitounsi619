@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -20,6 +22,8 @@ import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(	name = "users", 
@@ -59,13 +63,19 @@ public class User {
 	
 	@Column(name = "enabled")
     private boolean enabled=false;
+	
+	private String img;
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(	name = "user_roles",
 				joinColumns = @JoinColumn(name = "user_id"), 
 				inverseJoinColumns = @JoinColumn(name = "role_id")) 
-			
+	
 	private Set<Role> roles = new HashSet<>();
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="Iduser" ,cascade=CascadeType.ALL)
+	private Set<ImageUser> Images;
 	
 	
 
@@ -181,6 +191,74 @@ public class User {
 		Adresse = adresse;
 		NumTel = numTel;
 	}
+	
+	
+
+	
+	
+
+	public User(Long id, @NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email,
+			@NotBlank @Size(max = 120) String password, Date dateNaissance, @NotBlank @Size(max = 20) String adresse,
+			int numTel, Boolean etatAcc, boolean enabled, String img, Set<Role> roles, Set<ImageUser> images) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.dateNaissance = dateNaissance;
+		Adresse = adresse;
+		NumTel = numTel;
+		EtatAcc = etatAcc;
+		this.enabled = enabled;
+		this.img = img;
+		this.roles = roles;
+		Images = images;
+	}
+	
+	
+
+	public User(@NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email,
+			@NotBlank @Size(max = 120) String password, Date dateNaissance, @NotBlank @Size(max = 20) String adresse,
+			int numTel, String img, Set<Role> roles, Set<ImageUser> images) {
+		super();
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.dateNaissance = dateNaissance;
+		Adresse = adresse;
+		NumTel = numTel;
+		this.img = img;
+		this.roles = roles;
+		Images = images;
+	}
+	
+	
+
+	public User(@NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email,
+			@NotBlank @Size(max = 120) String password, Date dateNaissance, @NotBlank @Size(max = 20) String adresse,
+			int numTel, Boolean etatAcc, boolean enabled, String img, Set<Role> roles, Set<ImageUser> images) {
+		super();
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.dateNaissance = dateNaissance;
+		Adresse = adresse;
+		NumTel = numTel;
+		EtatAcc = etatAcc;
+		this.enabled = enabled;
+		this.img = img;
+		this.roles = roles;
+		Images = images;
+	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password
+				+ ", dateNaissance=" + dateNaissance + ", Adresse=" + Adresse + ", NumTel=" + NumTel + ", EtatAcc="
+				+ EtatAcc + ", enabled=" + enabled + ", img=" + img + ", roles=" + roles + ", Images=" + Images + "]";
+	}
 
 	public Long getId() {
 		return id;
@@ -260,6 +338,22 @@ public class User {
 
 	public void setNumTel(int numTel) {
 		NumTel = numTel;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	public Set<ImageUser> getImages() {
+		return Images;
+	}
+
+	public void setImages(Set<ImageUser> images) {
+		Images = images;
 	}
 	
 	
