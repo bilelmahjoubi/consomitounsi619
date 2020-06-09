@@ -2,7 +2,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="/templateclient.xhtml">
+	template="/template.xhtml">
 <ui:param name="profile" value="Accueil" />
 <ui:define name="profile">
 
@@ -29,7 +29,7 @@
 												<div class="candidate-img mb-35">
 												<ui:repeat var="ImagesUser" value="#{ImageUserController.getImageUser(userController.user.id)}" varStatus="status">
 												<li data-image="#{ImagesUser.image}">
-												<img src="#{ImagesUser.image}" alt="" style="width:16px; height:10px;"/></li>
+												<img src="#{ImagesUser.image}" alt="" style="width:1000px; height:1000px;"/></li>
 												</ui:repeat>
 												</div>
 												<ul class="social-icons">

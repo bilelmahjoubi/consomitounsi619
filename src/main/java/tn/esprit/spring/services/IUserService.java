@@ -3,6 +3,8 @@ package tn.esprit.spring.services;
 
 
 
+import java.util.List;
+
 import org.primefaces.model.file.UploadedFiles;
 
 import tn.esprit.spring.entity.User;
@@ -19,4 +21,8 @@ public interface IUserService {
     void createVerificationToken(User user, String token);
  
     VerificationToken getVerificationToken(String VerificationToken);
+
+	List<User> getAllUser();
+	
+	public void deleteUserById(long userId) ;
 }

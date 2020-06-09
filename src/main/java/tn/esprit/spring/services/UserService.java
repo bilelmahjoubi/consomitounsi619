@@ -1,5 +1,7 @@
 package tn.esprit.spring.services;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.primefaces.model.file.UploadedFile;
@@ -71,5 +73,15 @@ public class UserService implements IUserService {
 		}
 		
 	}
+	
+	@Override
+	public List<User> getAllUser() {
+	return (List<User>) userRepository.findAll();
+	}
     
+	
+	public void deleteUserById(long userId) {
+		User user = userRepository.findById(userId).get();
+		userRepository.delete(user);
+	}
 }

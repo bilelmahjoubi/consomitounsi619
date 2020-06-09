@@ -116,8 +116,7 @@ public class RegisterController {
 					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 			roles.add(userRole);
 			user.setRoles(roles);
-			userRepository.save(user);
-			
+			userService.addUserImage(user, files);
 			String appUrl = "";
 			User registered= user;
 			eventPublisher.publishEvent(new OnRegistrationCompleteEvent(appUrl, registered));
