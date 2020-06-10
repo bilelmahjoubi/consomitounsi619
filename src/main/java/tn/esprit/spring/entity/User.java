@@ -15,6 +15,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -24,6 +25,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 
 @Entity
 @Table(	name = "users", 
@@ -77,7 +80,11 @@ public class User {
 	@OneToMany(mappedBy="Iduser" ,cascade=CascadeType.ALL)
 	private Set<ImageUser> Images;
 	
+	@OneToOne
+	private Reclamation reclamation;
 	
+	@OneToOne
+	private Publicite publicite;
 
 	public User() {
 		super();

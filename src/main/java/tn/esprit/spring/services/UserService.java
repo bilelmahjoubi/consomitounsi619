@@ -68,8 +68,7 @@ public class UserService implements IUserService {
 			image.setIduser(U);
 			image.setImage(fileDownloadUri);
 			imageser.save(image);
-			
-			
+
 		}
 		
 	}

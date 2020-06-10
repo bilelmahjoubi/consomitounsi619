@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 	
 	
@@ -41,6 +42,7 @@
 					Account Login
 				</span>
 				<div class="login100-form validate-form p-b-33 p-t-5">
+				<p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
 				<h:form class="user">
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">

@@ -1,6 +1,7 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 xmlns:f="http://java.sun.com/jsf/core"
 xmlns:h="http://java.sun.com/jsf/html"
+xmlns:p="http://primefaces.org/ui"
 xmlns:ui="http://java.sun.com/jsf/facelets"
 template="/template.xhtml">
 <ui:param name="content" value="Accueil" />
@@ -91,7 +92,6 @@ template="/template.xhtml">
 			<h:form>
       <h:outputText
 value="Bonjour #{userController.username}" />
-
 <h:commandLink value="Déconnexion" action="#{userController.doLogout()}" />
 </h:form>
 </h:panelGroup>

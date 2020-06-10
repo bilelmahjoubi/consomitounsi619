@@ -82,6 +82,7 @@ UserDetailsServiceImpl userDetailss ;
 				.collect(Collectors.toList());
 		user = userRepository.findByUsername(userDetails.getUsername())
 				.orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + userDetails.getUsername()));
+		
 		if(user != null && !user.isEnabled()){
 			
 			FacesMessage facesMessage =

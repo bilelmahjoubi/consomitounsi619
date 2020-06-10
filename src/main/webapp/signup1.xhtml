@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:b="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
@@ -46,6 +46,7 @@
 				<div class="login100-form validate-form">
 				
 				<h:form class="register" enctype="multipart/form-data">
+				<p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
 					<span class="login100-form-title p-b-59">
 						Sign Up
 					</span>
