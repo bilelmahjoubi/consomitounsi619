@@ -1,0 +1,347 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<head>
+    <title>Consomi Tounsi</title>
+    <meta charset="utf-8"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="resources/assets/img/apple-icon.png"/>
+  <link rel="icon" type="image/png" href="resources/assets/img/favicon.png"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
+ <link href="resources/assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+  <link href="resources/assets/demo/demo.css" rel="stylesheet" />
+  
+  <h:outputStylesheet  src="resources/vendor/fontawesome-free/css/all.min.css" />
+<link href="//fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet" />
+<h:outputStylesheet src="resources/css/sb-admin-2.min.css"/>
+
+ <link rel="icon" type="image/icon" href="favicon.png" />
+    <!-- main css -->
+    <link rel="stylesheet" href="resources/client/css/fonts.css" />
+    <link rel="stylesheet" href="resources/client/css/flaticon.css" />
+    <link rel="stylesheet" href="resources/client/css/custom_animation.css" />
+    <link rel="stylesheet" href="resources/client/css/bootstrap.css" />
+    <link rel="stylesheet" href="resources/client/css/font-awesome.css" />
+    <link rel="stylesheet" href="resources/client/css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="resources/client/css/magnific-popup.css" />
+    <link rel="stylesheet" href="resources/client/js/plugin/owl/owl.carousel.css" />
+    <link rel="stylesheet" href="resources/client/js/plugin/range_slider/jquery-ui.css" />
+    <link rel="stylesheet" href="resources/client/css/style.css" media="screen" />
+    <link rel="stylesheet" href="resources/client/css/colors/default.css" id="colors" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="" />
+    <meta name="keywords" content=""/>
+    <meta name="author" content="" />
+    <meta name="MobileOptimized" content="320"/>
+    <!-- favicon links-->
+    <link rel="icon" type="image/icon" href="favicon.png" />
+    <!-- main css -->
+    <link rel="stylesheet" href="resources/client/css/fonts.css" />
+    <link rel="stylesheet" href="resources/client/css/bootstrap.css" />
+    <link rel="stylesheet" href="resources/client/css/font-awesome.css" />
+    <link rel="stylesheet" href="resources/client/css/magnific-popup.css" />
+    <link rel="stylesheet" href="resources/client/css/custom_animation.css" />
+    <!--revolution-->
+    <link href="resources/client/js/plugin/revolution/css/settings.css" rel="stylesheet" type="text/css"/>
+    <link href="resources/client/js/plugin/revolution/css/layers.css" rel="stylesheet" type="text/css"/>
+    <link href="resources/client/js/plugin/revolution/css/navigation.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="resources/client/js/plugin/owl/owl.carousel.css" />
+    <link rel="stylesheet" href="resources/client/css/style.css" media="screen" />
+    <link rel="stylesheet" href="resources/client/css/colors/default.css" id="colors" />
+</head>
+<body>
+    <!--preloader-->
+    <div class="loader">
+        <div class="loader-inner ball-scale-ripple-multiple">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!--main wrapper start-->
+    <div id="wrapper">
+        <!--top_header start-->
+        <div class="hm_top_info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8">
+                        <div class="hm_top_login">
+                            <ul>
+                                <li><a href="/login.jsf" class="popup-with-form"><i class="fa fa-user" aria-hidden="true"></i> logout</a></li>
+                                <li><a href="/myinvoices.jsf" class="popup-signup-form"><i class="fa fa-pencil" aria-hidden="true"></i> invoices</a></li>
+                                <li><a href="/details.jsf"><i class="fa fa-cart-plus" aria-hidden="true"></i> checkout</a></li>
+                                 
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 pull-right">
+                        <div class="top_usd">
+                            <div class="hm_top_wishlist">
+                                <p><a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</a></p>
+                            </div>
+                            <div class="hm_top_usd">
+                                <p><a href="javascript:;"><i class="fa fa-angle-down" aria-hidden="true"></i> usd</a></p>
+                                <ul class="usd_dropmenu">
+                                    <li><a href="#">EUR - Euro</a></li>
+                                    <li><a href="#">USD - US Dollar</a></li>
+                                    <li><a href="#">GBP - British Pound</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Header start-->
+        <div class="hm_header_wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-6">
+                        <div class="hm_logo">
+                            <a href="index.html"><img src="resources/client/images/pi.png" alt="" class="img-responsive"/></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="hm_top_search">
+                            <input type="search" name="search" placeholder="Search...."/>
+                            <span class="search_icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hm_header_overlay"></div>
+        </div>
+        <!--menu start-->
+        <div class="hm_menu_wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="hm_menu_wrap">
+                            <nav>
+                                <div class="menu_btn"><span></span><span></span><span></span></div>
+                                <div class="hm_menu">
+                                    <ul>
+                                        <li class="dropdown"><a href="index.html">home</a>
+                                      
+                                        </li>
+                                        <li><a href="about.html">about</a></li>
+                                        <li><a href="services.html">services</a></li>
+                                        <li class="active dropdown"><a href="javacsript:;">Catalogs</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="/catalogfood.jsf">FOOD'S CATALOG</a></li>
+                                                <li><a href="/catalogclothers.jsf">CLOTHERE'S CATALOG</a></li>
+                                                <li><a href="/catalogjewlery.jsf">JEWLERY'S CATALOG</a></li>
+                                                <li><a href="/catalogdecorationelements.jsf">HOME DECORATION ELEMENTS</a></li>
+                                                <li><a href="/catalogartisanat.jsf">ARTISANAT'S CATALOG</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="javascript:;">blog</a>
+                                            
+                                        </li>
+                                        <li class="dropdown"><a href="javascript:;">shop</a>
+                                            
+                                        </li>
+                                        <li><a href="contact.html">contact</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--banner start-->
+        <div class="hm_bread_wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <h1>Catalogs</h1>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">CHECKOUT</a></li>
+                            <li class="breadcrumb-item active">CART LIST</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--About section start-->
+        <div class="hm_gallery_wrapper">
+            <div class="container">
+                <div class="hm_gallery_inner margin_btm30">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="filter_list">
+                                <ul class="portfolio-filter">
+                                    <li><a href="#" class="filter active" data-filter="*">all</a></li>
+                                    <li><a href="#" class="filter" data-filter=".paper_craft">paper craft</a></li>
+                                    <li><a href="#" class="filter" data-filter=".knitting">knitting</a></li>
+                                    <li><a href="#" class="filter" data-filter=".painting">painting</a></li>
+                                    <li><a href="#" class="filter" data-filter=".clay">clay</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+        
+<h:panelGroup>
+<div class="card-body">
+<div class="table-responsive">
+
+<h:form>
+<h:dataTable value="#{ipaniercontroller.getProds(icontrollerclient.id)}" var="product"  class="table">
+<h:column>
+<f:facet name="header">
+<h:outputText value="product name"  class=" text-primary"/>
+</f:facet>
+<h:outputText value="#{product.nameprod}"  class="text-primary"/>
+</h:column> 
+<h:column>
+<f:facet name="header">
+<h:outputText value="Price"  class=" text-primary"/>
+</f:facet>
+<h:outputText value="#{product.price}"  class="text-primary"/>
+</h:column>
+<h:column>
+<f:facet name="header">
+<h:outputText value="TOTAL"  class=" text-primary"/>
+</f:facet>
+<h:outputText value="#{ipaniercontroller.gettotal(icontrollerclient.id)}"  class="text-primary" rowspan="3"/>
+</h:column>
+</h:dataTable>
+<h:commandButton action="#{icontrollercommande.validercommande(icontrollerclient.id)}"
+value="CONFIRM ORDER" class="hm_btn add-to-cart"  style="text-align: center;"/>
+<a href="/home.html" style="font-size:20px; color:#696969;text-decoration: underline;" >pay with cart</a><br/>
+</h:form>
+</div>
+</div>
+</h:panelGroup>
+        
+        
+        <div class="hm_partners_wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <h1 class="hm_heading">Our clients</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="hm_partners_slider">
+                            <div class="owl-carousel owl-theme test_slider">
+                                <div class="item"><img src="http://via.placeholder.com/150x86" alt=""/></div>
+                                <div class="item"><img src="http://via.placeholder.com/150x86" alt=""/></div>
+                                <div class="item"><img src="http://via.placeholder.com/150x86" alt=""/></div>
+                                <div class="item"><img src="http://via.placeholder.com/150x86" alt=""/></div>
+                                <div class="item"><img src="http://via.placeholder.com/150x86" alt=""/></div>
+                                <div class="item"><img src="http://via.placeholder.com/150x86" alt=""/></div>
+                                <div class="item"><img src="http://via.placeholder.com/150x86" alt=""/></div>
+                                <div class="item"><img src="http://via.placeholder.com/150x86" alt=""/></div>
+                                <div class="item"><img src="http://via.placeholder.com/150x86" alt=""/></div>
+                                <div class="item"><img src="http://via.placeholder.com/150x86" alt=""/></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!--footer start-->
+        <div class="hm_footer_wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="hm_footer_box">
+                            <img src="resources/client/images/pi.png" alt="" class="img-responsive"/>
+                            <p class="footer_about_para">Consomi Tounsi #619 web site for only tunisian products.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="hm_footer_box">
+                            <h3 class="footer_heading">Help</h3>
+                            <ul>
+                                <li><a href="#">Find Your Beer</a></li>
+                                <li><a href="#">Customer Service</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Recent Orders</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="hm_footer_box">
+                            <h3 class="footer_heading">links</h3>
+                            <ul>
+                                <li><a href="index.html">home</a></li>
+                                <li><a href="shop.html">shop</a></li>
+                                <li><a href="404.html">404 page</a></li>
+                                <li><a href="javascript:;">login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="hm_footer_box hm_footer_contact">
+                            <h3 class="footer_heading">Our Information</h3>
+                            <ul>
+                                <li><span class="footer_icon"><i class="fa fa-map-marker" aria-hidden="true"></i> </span>
+                                    <p class="foo_con_para">TUNIS cite el ghazella 2082</p>
+                                </li>
+                                <li><span class="footer_icon"><i class="fa fa-phone" aria-hidden="true"></i> </span>
+                                    <p class="foo_con_para">+216 95 243 637  +216 55 205 249</p>
+                                </li>
+                                <li><a href="emna.bennasr@esprit.tn"><span class="footer_icon"><i class="fa fa-envelope" aria-hidden="true"></i> </span><p class="foo_con_para">emna.bennasr@esprit.tn</p></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--bottom footer start-->
+        <div class="hm_bottom_footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <p>Copyrights  2020 All Rights Reserved by ESPRIT</p>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <ul class="footer_so_icons">
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--popup login form-->
+        
+        <!--popup signup form-->
+       
+        <!--main wrapper-->
+    </div>
+    <!--script-->
+    <script type="text/javascript" src="resources/client/js/jquery.js"></script>
+    <script type="text/javascript" src="resources/client/js/bootstrap.js"></script>
+    <script type="text/javascript" src="resources/client/js/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="resources/client/js/wow.min.js"></script>
+    <script type="text/javascript" src="resources/client/js/jquery.magnific-popup.js"></script>
+    <script type="text/javascript" src="resources/client/js/isotope.js"></script>
+    <script type="text/javascript" src="resources/client/js/plugin/owl/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="resources/client/js/switcher.js"></script>
+    <script type="text/javascript" src="resources/client/js/custom.js"></script>
+
+</body>
+ </ui:composition> 
