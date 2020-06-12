@@ -80,11 +80,7 @@ public class User {
 	@OneToMany(mappedBy="Iduser" ,cascade=CascadeType.ALL)
 	private Set<ImageUser> Images;
 	
-	@OneToOne
-	private Reclamation reclamation;
 	
-	@OneToOne
-	private Publicite publicite;
 
 	public User() {
 		super();

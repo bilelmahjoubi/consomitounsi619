@@ -1,9 +1,19 @@
 package tn.esprit.spring.services;
 
+import java.util.List;
+
+import tn.esprit.spring.entity.Event;
+
 public interface IEventService {
 
-	int getNbpart(int n);
+	int getNombrePlacesEvent(Long idevent);
 
-	int getNbplace(int n);
+	int getNombreParticpEvent(Long idevent);
+	
+	public List<Long> getEventList();
+	
+	public Event findOne(long id);
+
+	
 
 }

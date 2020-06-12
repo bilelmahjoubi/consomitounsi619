@@ -2,7 +2,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="/template.xhtml">
+	template="/templateclient.xhtml">
 <ui:param name="profile" value="Accueil" />
 <ui:define name="profile">
 
@@ -78,12 +78,11 @@
 											<div class="col-md-7 col-xs-12">
 											<h:form class="user">
 												<div class="info-wrap">
-													<h:outputText value="#{userController.username}" ></h:outputText>
-													<h5 class="mt-20 font-grey">UI/UX Designer &amp; Front End Developer</h5>
+			
+													<h5><h:outputText value="#{userController.username}" ></h:outputText></h5>
+													
 													<div class="mt-30">
-														<a id="update_profile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  bg-green font-white mr-10" href="updateprofile.jsf" data-upgraded=",MaterialButton,MaterialRipple">update profile<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
-														<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect bg-blue font-white" href="#contact_sec" data-scroll="" data-upgraded=",MaterialButton,MaterialRipple">contact<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
-													</div>
+														<a id="update_profile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  bg-green font-white mr-10" href="updateprofile.jsf" data-upgraded=",MaterialButton,MaterialRipple">update profile<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>		</div>
 												</div>
 												<ul class="profile-wrap mt-50">
 													<li>

@@ -21,7 +21,7 @@ public class Event {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_E")
-	private int id;
+	private long id;
 
 	@Temporal(TemporalType.DATE)
 	private Date datee ;
@@ -38,11 +38,11 @@ public class Event {
 	@OneToOne(mappedBy="event")
 	private Publicite publicite_id ;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

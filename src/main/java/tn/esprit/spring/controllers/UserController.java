@@ -113,6 +113,11 @@ UserDetailsServiceImpl userDetailss ;
 		return navigateTo;
 		}
 	
+	public String doLogout()
+	{FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+	return "/login1.xhtml?faces-redirect=true";
+	}
+	
 	
 	
 		public String DisableUser(String username){

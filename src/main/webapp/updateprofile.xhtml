@@ -72,25 +72,31 @@
 											</div>
 											<div class="col-md-7 col-xs-12">
 											<h:form class="user">
-												<div class="info-wrap">
-													<h5><h:outputText value="#{userController.username}" ></h:outputText></h5>
-													
-													
-												</div>
 												<ul class="profile-wrap mt-50">
 												
+												
+												
+												<li>
+														<div class="profile-title">username</div>
+														<div class="profile-desc">														
+														<h:inputText id="username" class="profile-wrap mt-50" type="text" name="username"   value="#{userController.username}" required="true" requiredMessage="Veuillez préciser le username !!"></h:inputText>
+														<h:message for="username" style="color:red" /> 
+														</div>
+													</li>
 													<li>
 														<div class="profile-title">email</div>
 														<div class="profile-desc">
 														
-														<h:inputText class="profile-wrap mt-50" type="text" name="email"   value="#{userController.user.email}" ></h:inputText>
+														<h:inputText id="email" class="profile-wrap mt-50" type="text" name="email"   value="#{userController.user.email}" required="true" requiredMessage="Veuillez préciser l'email !!"></h:inputText>
+														<h:message for="email" style="color:red" /> 
 														</div>
 													</li>
 													<li>
 														<div class="profile-title">address</div>
 														<div class="profile-desc">												
 															<!-- <h:outputText value="#{userController.user.adresse}" ></h:outputText> -->
-															<h:inputText class="profile-wrap mt-50" type="text" name="adresse"   value="#{userController.user.adresse}" ></h:inputText>
+															<h:inputText id="adress" class="profile-wrap mt-50" type="text" name="adresse"   value="#{userController.user.adresse}" required="true" requiredMessage="Veuillez préciser l'email !!"></h:inputText>
+															<h:message for="adress" style="color:red" /> 
 														</div>
 													</li>
 													<li>
@@ -106,12 +112,14 @@
 														<div class="profile-title">phone</div>
 														<div class="profile-desc">
 															
-															<h:inputText class="profile-wrap mt-50" type="text" name="dateNaissance"   value="#{userController.user.numTel}" ></h:inputText></div>
+												<h:inputText id="phone" class="profile-wrap mt-50" type="text" name="phone"   value="#{userController.user.numTel}" >
+											
+											</h:inputText><h:message for="phone" style="color:red" /></div>
 													</li>
 													<li>
 													<div class="mt-30">
-														<a id="update_profile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  bg-green font-white mr-10" href="profile.jsf" data-upgraded=",MaterialButton,MaterialRipple">
-													<h:commandButton class="login100-form-btn" value="save changes" action="#{updateController.updateUser(userController.user.id)}" /></a> </div>
+														
+													<h:commandButton class="login100-form-btn" value="save changes" action="#{updateController.updateUser(userController.user.id)}" href="profile.jsf" /> </div>
 													</li>
 												</ul>
 												</h:form>

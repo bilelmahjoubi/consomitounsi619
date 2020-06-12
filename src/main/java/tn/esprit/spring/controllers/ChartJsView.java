@@ -47,10 +47,7 @@ public class ChartJsView implements Serializable {
 	
 	@Autowired
 	IReclamationService reclamationService;
-	@Autowired
-	IEventService eventService;
-	@Autowired
-	EventRepository eventRepository;
+	
     private PieChartModel pieModel;
      
     private PolarAreaChartModel polarAreaModel;
@@ -62,8 +59,6 @@ public class ChartJsView implements Serializable {
     private BarChartModel barModel;
      
     private BarChartModel barModel2;
-     
-    private BarChartModel barModel21;
     
     private HorizontalBarChartModel hbarModel;
      
@@ -243,67 +238,6 @@ public class ChartJsView implements Serializable {
          
         barModel2.setOptions(options);
     }
-
-     
-    public void createBarModel21() {
-    	
-    	
-        barModel21 = new BarChartModel();
-        ChartData data = new ChartData();
-         
-        BarChartDataSet barDataSet = new BarChartDataSet();
-        barDataSet.setLabel("Nombre de Reclamation");
-        barDataSet.setBackgroundColor("rgba(255, 99, 132, 0.2)");
-        barDataSet.setBorderColor("rgb(255, 99, 132)");
-        barDataSet.setBorderWidth(1);
-        for (int i = 1; i < 100; i++){
-        	List<Number> values = new ArrayList<>();
-        	values.add(eventService.getNbplace(i));
-        	 barDataSet.setData(values);
-        }
-         
-        BarChartDataSet barDataSet2 = new BarChartDataSet();
-        barDataSet2.setLabel("Nombre De Reclamation Traitée");
-        barDataSet2.setBackgroundColor("rgba(255, 159, 64, 0.2)");
-        barDataSet2.setBorderColor("rgb(255, 159, 64)");
-        barDataSet2.setBorderWidth(1);
-        
-        for (int i = 1; i < 100; i++){
-        	List<Number> values2 = new ArrayList<>();
-        	values2.add(eventService.getNbpart(i));
-        	 barDataSet2.setData(values2);
-        }
-      
- 
-        data.addChartDataSet(barDataSet);
-        data.addChartDataSet(barDataSet2);
-  
-        for (int i = 1; i < 100; i++){
-        List<String> labels = new ArrayList<>();
-        Event e = new Event();
-        labels.add(eventRepository.titre(i)) ;
-        data.setLabels(labels);
-        barModel21.setData(data);
-        }
-        
-        
-        //Options
-        BarChartOptions options = new BarChartOptions();
-        CartesianScales cScales = new CartesianScales();
-        CartesianLinearAxes linearAxes = new CartesianLinearAxes();
-        CartesianLinearTicks ticks = new CartesianLinearTicks();
-        ticks.setBeginAtZero(true);
-        linearAxes.setTicks(ticks);
-        cScales.addYAxesData(linearAxes);
-        options.setScales(cScales);
-         
-        Title title = new Title();
-        title.setDisplay(true);
-        title.setText("Bar Chart");
-        options.setTitle(title);
-         
-        barModel21.setOptions(options);
-    }
  
     public void itemSelect(ItemSelectEvent event) {
         FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Item selected",
@@ -332,30 +266,6 @@ public class ChartJsView implements Serializable {
 
 	public void setReclamationService(IReclamationService reclamationService) {
 		this.reclamationService = reclamationService;
-	}
-
-	public IEventService getEventService() {
-		return eventService;
-	}
-
-	public void setEventService(IEventService eventService) {
-		this.eventService = eventService;
-	}
-
-	public EventRepository getEventRepository() {
-		return eventRepository;
-	}
-
-	public void setEventRepository(EventRepository eventRepository) {
-		this.eventRepository = eventRepository;
-	}
-
-	public BarChartModel getBarModel21() {
-		return barModel21;
-	}
-
-	public void setBarModel21(BarChartModel barModel21) {
-		this.barModel21 = barModel21;
 	}
 
 	public void setPolarAreaModel(PolarAreaChartModel polarAreaModel) {

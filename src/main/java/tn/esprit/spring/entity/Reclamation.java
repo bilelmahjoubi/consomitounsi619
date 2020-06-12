@@ -33,27 +33,10 @@ public class Reclamation {
 	private Date date_rec ;
 	@Temporal(TemporalType.DATE)
 	private Date dateT;
-	@JsonIgnore
-	@OneToOne(mappedBy="reclamation")
-	private Commandes commande_id;  
-	@OneToOne(mappedBy="reclamation")
-	private User user_id ;
+
+
 	public Reclamation() {
 		super();
-	}
-	public Reclamation(int id, String description, String etat, String reponse, String titre, Boolean traiter,
-			Date date_rec, Date dateT, Commandes commande_id, User user_id) {
-		super();
-		this.id = id;
-		this.description = description;
-		this.etat = etat;
-		this.reponse = reponse;
-		this.titre = titre;
-		this.traiter = traiter;
-		this.date_rec = date_rec;
-		this.dateT = dateT;
-		this.commande_id = commande_id;
-		this.user_id = user_id;
 	}
 	public int getId() {
 		return id;
@@ -103,19 +86,8 @@ public class Reclamation {
 	public void setDateT(Date dateT) {
 		this.dateT = dateT;
 	}
-	public Commandes getCommande_id() {
-		return commande_id;
-	}
-	public void setCommande_id(Commandes commande_id) {
-		this.commande_id = commande_id;
-	}
-	public User getUser_id() {
-		return user_id;
-	}
-	public void setUser_id(User user_id) {
-		this.user_id = user_id;
-	}
-	
+
+
 	
 
 

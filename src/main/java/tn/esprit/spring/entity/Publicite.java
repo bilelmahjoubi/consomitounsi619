@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -45,12 +46,11 @@ public class Publicite {
 
 	private int fin_age_cible ;
 	
-	@JsonIgnore
-	@OneToOne(mappedBy="publicite")
-	private User id_user;
-	
 	@OneToOne
 	private Event event;
+	
+	
+	
 
 	public int getId() {
 		return id;
@@ -140,13 +140,6 @@ public class Publicite {
 		this.fin_age_cible = fin_age_cible;
 	}
 
-	public User getId_user() {
-		return id_user;
-	}
-
-	public void setId_user(User id_user) {
-		this.id_user = id_user;
-	}
 
 	public Event getEvent() {
 		return event;
@@ -171,7 +164,7 @@ public class Publicite {
 		this.gender_cible = gender_cible;
 		this.debut_age_cible = debut_age_cible;
 		this.fin_age_cible = fin_age_cible;
-		this.id_user = id_user;
+	
 		this.event = event;
 	}
 

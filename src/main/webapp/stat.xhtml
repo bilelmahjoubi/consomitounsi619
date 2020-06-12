@@ -2,10 +2,11 @@
 xmlns:f="http://java.sun.com/jsf/core"
 xmlns:h="http://java.sun.com/jsf/html"
 xmlns:p="http://primefaces.org/ui"
+xmlns:hf="http://highfaces.org"
 xmlns:ui="http://java.sun.com/jsf/facelets"
 template="/template.xhtml">
-<ui:param name="content" value="Accueil" />
-<ui:define name="content">
+<ui:param name="chartrec" value="Accueil" />
+<ui:define name="chartrec">
 <!-- BEGIN : TP1 JSF Introduction Login -->
 <h:head>
   <title>SB Admin 2 - Blank</title>
@@ -17,6 +18,13 @@ template="/template.xhtml">
       rel="stylesheet" />
   <!-- Custom styles for this template-->
   <h:outputStylesheet library="login" name="css/sb-admin-2.min.css"/>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js">
+</script>   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>   
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
 
 </h:head>
 <div class="wrapper ">
@@ -90,9 +98,21 @@ template="/template.xhtml">
       <div class="content">
       <h:panelGroup>
 			<h:form>
+			
+			<p:barChart model="#{chartJsView.barModel2}" style="width: 70%; height: 350px;"/>
       
-	<p:barChart model="#{chartJsView.barModel2}" style="width: 70%; height: 350px;"/>
-	<p:barChart model="#{chartJsView.barModel21}" style="width: 70%; height: 350px;"/>
+      <div ><h1>#{statController.getTopPub()}</h1></div>
+      <hf:chart type="pie" title="top 5 Pub"> 
+    <hf:chartSerie name="pub" value="#{statController.top}" var="point" point="#{point.amount}"  tickLabel="#{point.name}"
+         dataLabel="&lt;b>{point.name}&lt;/b>: {point.percentage:.1f} % &lt;i>({point.y})&lt;/i>"/>
+	</hf:chart>
+      
+      <div ><h1>#{statController.statEvent()}</h1></div>
+      <hf:chart type="column" value="#{statController.event}" var="event" stacking="normal"
+     point="#{event.amount}" tickLabel="#{event.name}" title="Events Stat"/>
+     
+    
+      
 
 </h:form>
 </h:panelGroup>
