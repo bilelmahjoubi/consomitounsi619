@@ -1,5 +1,4 @@
-package tn.esprit.spring.entities;
-
+package tn.esprit.spring.entity;
 public enum Category {
 CLOTHERS,FOOD,JEWLERY,HOMEELEMENTDECORATION,ARTISANAT
 }

@@ -1,4 +1,4 @@
-package tn.esprit.spring.entities;
+package tn.esprit.spring.entity;
 
 	import lombok.AllArgsConstructor;
 	import lombok.Data;
